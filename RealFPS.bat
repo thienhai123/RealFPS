@@ -5,7 +5,7 @@ color 07
 
 set VERSION=1.0-beta
 set BUILD=2026.07
-set DEVELOPER=Nguyen Thanh Thien Hai
+set DEVELOPER=Nguyen Thanh Thiên Hải
 
 
 :: =====================================
@@ -16,20 +16,24 @@ call :ENV_CHECK
 call :INTRO
 
 
+:: =====================================
+:: MAIN MENU
+:: =====================================
+
 :MENU
 
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "REALFPS"
-call :CENTER "Windows Gaming Optimizer"
-call :CENTER "Version %VERSION%"
-call :PINK_LINE
+echo ==================================================
+echo                     REALFPS
+echo             Windows Gaming Optimizer
+echo                 Version %VERSION%
+echo ==================================================
 
 echo.
 
-echo SYSTEM STATUS
+echo STATUS
 call :CHECK_POWER
 call :CHECK_GAME
 call :CHECK_DVR
@@ -37,30 +41,35 @@ call :CHECK_HAGS
 
 echo.
 
-echo =====================================
+echo ==================================================
 echo MENU
-echo =====================================
+echo ==================================================
 
 echo.
-echo [1] System Preparation
+
+echo [1] Start Optimization
+
 echo.
-echo [2] RealFPS Tweaks
+
+echo [2] Diagnostics
+
 echo.
-echo [3] Diagnostics
+
+echo [3] Information
+
 echo.
-echo [4] Information
-echo.
+
 echo [0] Exit
+
 echo.
 
 
 set /p choice=Select Option: 
 
 
-if "%choice%"=="1" goto PREPARATION
-if "%choice%"=="2" goto TWEAKS
-if "%choice%"=="3" goto DIAGNOSTICS
-if "%choice%"=="4" goto INFORMATION
+if "%choice%"=="1" goto START_OPTIMIZATION
+if "%choice%"=="2" goto DIAGNOSTICS
+if "%choice%"=="3" goto INFORMATION
 if "%choice%"=="0" exit
 
 
@@ -76,16 +85,30 @@ goto MENU
 :: INTRO
 :: =====================================
 
-
 :INTRO
 
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "REALFPS"
-call :CENTER "Windows Gaming Optimizer"
-call :PINK_LINE
+echo ==================================================
+echo                     REALFPS
+echo             Windows Gaming Optimizer
+echo ==================================================
+
+echo.
+
+echo Welcome to RealFPS.
+
+echo.
+
+echo RealFPS is a free and open-source
+echo Windows optimization toolkit.
+
+echo.
+
+echo =====================================
+echo PROJECT INFORMATION
+echo =====================================
 
 echo.
 
@@ -110,6 +133,7 @@ echo %DEVELOPER%
 echo.
 
 echo Philosophy:
+
 echo Real Tweaks
 echo Real Results
 echo No Placebo
@@ -117,24 +141,19 @@ echo No Placebo
 echo.
 
 echo =====================================
-
-echo RealFPS is a free and open-source
-echo Windows optimization toolkit.
-
-echo.
-
-echo This project focuses on:
-echo - Safe optimization
-echo - Measurable improvements
-echo - System transparency
-
-echo.
-
+echo IMPORTANT NOTICE
 echo =====================================
 
-echo IMPORTANT:
-echo Please run RealFPS as Administrator
-echo for full functionality.
+echo.
+
+echo RealFPS should be run as Administrator.
+
+echo.
+
+echo Administrator permission is required
+echo for system optimization features.
+
+echo.
 
 echo =====================================
 
@@ -149,6 +168,165 @@ exit /b
 
 
 :: =====================================
+:: START OPTIMIZATION
+:: =====================================
+
+:START_OPTIMIZATION
+
+cls
+
+echo.
+echo ==================================================
+echo              START OPTIMIZATION
+echo ==================================================
+
+echo.
+
+echo RealFPS will guide you through
+echo system optimization step by step.
+
+echo.
+
+echo The process includes:
+
+echo.
+
+echo STEP 1:
+echo System Preparation
+
+echo - Create Restore Point
+echo - Hardware Detection
+echo - Recommended Settings
+
+echo.
+
+echo STEP 2:
+echo RealFPS Tweaks
+
+echo - Power Management
+echo - Gaming Optimization
+echo - GPU Optimization
+
+echo.
+
+echo STEP 3:
+echo Gaming Profile
+
+echo - Competitive
+echo - Balanced
+echo - Battery Saving
+
+echo.
+
+echo ==================================================
+
+echo.
+
+echo Continue optimization?
+
+echo.
+
+echo [1] Yes
+
+echo [0] No
+
+
+echo.
+
+set /p choice=Select Option:
+
+
+if "%choice%"=="1" goto STEP_1
+
+if "%choice%"=="0" goto CANCEL_OPTIMIZATION
+
+
+goto START_OPTIMIZATION
+
+
+
+
+
+
+
+:CANCEL_OPTIMIZATION
+
+cls
+
+echo.
+
+echo Optimization cancelled.
+
+echo.
+
+echo Returning to RealFPS Introduction...
+
+timeout /t 3 >nul
+
+goto INTRO
+
+
+
+
+
+
+
+:: =====================================
+:: STEP 1
+:: =====================================
+
+:STEP_1
+
+cls
+
+echo.
+echo ==================================================
+echo              STEP 1/3
+echo          SYSTEM PREPARATION
+echo ==================================================
+
+echo.
+
+echo Before changing Windows settings,
+echo RealFPS recommends preparing your system.
+
+echo.
+
+echo This step will:
+
+echo.
+
+echo [1] Create Restore Point
+
+echo [2] Detect Hardware
+
+echo [3] Analyze Recommendation
+
+
+echo.
+
+echo Continue Step 1?
+
+echo.
+
+echo [1] Continue
+
+echo [0] Cancel
+
+
+echo.
+
+set /p choice=Select Option:
+
+
+if "%choice%"=="1" goto PREPARATION
+
+if "%choice%"=="0" goto CANCEL_OPTIMIZATION
+
+
+goto STEP_1
+
+:: =====================================
 :: SYSTEM PREPARATION
 :: =====================================
 
@@ -158,13 +336,14 @@ exit /b
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "SYSTEM PREPARATION"
-call :PINK_LINE
+echo ==================================================
+echo              STEP 1/3
+echo          SYSTEM PREPARATION
+echo ==================================================
 
 echo.
 
-echo Prepare your system before tweaking.
+echo Preparing your system...
 
 echo.
 
@@ -174,23 +353,27 @@ echo [2] Hardware Detection
 
 echo [3] Recommended Settings
 
-echo [4] Backup / Restore
+echo [4] Continue to RealFPS Tweaks
 
 echo.
 
-echo [0] Back
+echo [0] Cancel
 
 
 echo.
 
-set /p choice=Select Option: 
+set /p choice=Select Option:
 
 
 if "%choice%"=="1" goto RESTORE_POINT
+
 if "%choice%"=="2" goto HARDWARE_SCAN
+
 if "%choice%"=="3" goto RECOMMEND
-if "%choice%"=="4" goto BACKUP_MENU
-if "%choice%"=="0" goto MENU
+
+if "%choice%"=="4" goto STEP_2
+
+if "%choice%"=="0" goto CANCEL_OPTIMIZATION
 
 
 goto PREPARATION
@@ -211,21 +394,54 @@ goto PREPARATION
 cls
 
 echo.
-echo Creating Restore Point...
+echo ==================================================
+echo             RESTORE POINT
+echo ==================================================
+
 echo.
+
+echo RealFPS will create a Windows Restore Point.
+
+echo.
+
+echo This allows you to safely return
+echo to the previous system state.
+
+echo.
+
+echo Continue?
+
+echo.
+
+echo [1] Create Restore Point
+
+echo [0] Back
+
+
+echo.
+
+set /p choice=Select Option:
+
+
+if "%choice%"=="1" (
 
 powershell -command "Checkpoint-Computer -Description 'Before RealFPS Optimization' -RestorePointType MODIFY_SETTINGS"
 
+echo.
 
-if %errorlevel% neq 0 (
-call :FAILED "Restore Point Failed"
+echo Restore Point Created.
+
+pause
+
 goto PREPARATION
+
 )
 
 
-call :SUCCESS "Restore Point Created"
+if "%choice%"=="0" goto PREPARATION
 
-goto PREPARATION
+
+goto RESTORE_POINT
 
 
 
@@ -243,9 +459,9 @@ goto PREPARATION
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "HARDWARE DETECTION"
-call :PINK_LINE
+echo ==================================================
+echo          HARDWARE DETECTION
+echo ==================================================
 
 echo.
 
@@ -276,23 +492,184 @@ echo Windows:
 powershell -command "Get-CimInstance Win32_OperatingSystem | Select -ExpandProperty Caption"
 
 
+echo.
+
+echo Architecture:
+
+powershell -command "Get-CimInstance Win32_OperatingSystem | Select -ExpandProperty OSArchitecture"
+
+
+echo.
+
+echo Hardware Scan Complete.
+
+
 pause
 
 goto PREPARATION
+
+
+
+
+
+
+
+:: =====================================
+:: RECOMMENDATION
+:: =====================================
+
+
+:RECOMMEND
+
+cls
+
+echo.
+echo ==================================================
+echo        REALFPS RECOMMENDED SETTINGS
+echo ==================================================
+
+echo.
+
+
+echo Checking system...
+
+echo.
+
+
+for /f %%a in ('powershell -command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB)"') do set RAM=%%a
+
+
+echo RAM:
+echo %RAM% GB
+
+
+echo.
+
+
+if %RAM% GEQ 16 (
+
+echo [OK] System RAM is suitable for gaming
+
+) else (
+
+echo [INFO] Consider closing background apps
+
+)
+
+
+echo.
+
+echo Recommended:
+
+echo.
+
+echo [OK] Enable Game Mode
+
+echo [OK] Disable Xbox DVR
+
+echo [OK] Update GPU Driver
+
+echo [OK] Use High Performance while gaming
+
+
+echo.
+
+echo Recommendation complete.
+
+
+pause
+
+goto PREPARATION
+
+
+
+
+
+
+
+:: =====================================
+:: STEP 2
+:: =====================================
+
+
+:STEP_2
+
+cls
+
+echo.
+echo ==================================================
+echo              STEP 2/3
+echo           REALFPS TWEAKS
+echo ==================================================
+
+echo.
+
+
+echo This step applies Windows gaming
+echo optimization settings.
+
+echo.
+
+
+echo Includes:
+
+echo.
+
+echo [1] Power Management
+
+echo [2] Gaming Optimization
+
+echo [3] GPU Optimization
+
+
+echo.
+
+
+echo Changes may require restart.
+
+echo.
+
+
+echo Continue?
+
+echo.
+
+echo [1] Continue
+
+echo [0] Cancel
+
+
+echo.
+
+set /p choice=Select Option:
+
+
+if "%choice%"=="1" goto TWEAKS_MENU
+
+if "%choice%"=="0" goto CANCEL_OPTIMIZATION
+
+
+goto STEP_2
+
+
+
+
+
+
 
 :: =====================================
 :: REALFPS TWEAKS MENU
 :: =====================================
 
 
-:TWEAKS
+:TWEAKS_MENU
 
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "REALFPS TWEAKS"
-call :PINK_LINE
+echo ==================================================
+echo              REALFPS TWEAKS
+echo ==================================================
 
 echo.
 
@@ -308,7 +685,8 @@ echo [3] GPU Optimization
 
 echo.
 
-echo [4] Gaming Profiles
+echo [4] Continue Gaming Profile
+
 
 echo.
 
@@ -321,19 +699,17 @@ set /p choice=Select Option:
 
 
 if "%choice%"=="1" goto POWER_MENU
+
 if "%choice%"=="2" goto GAMING_MENU
+
 if "%choice%"=="3" goto GPU_MENU
-if "%choice%"=="4" goto PROFILE_MENU
-if "%choice%"=="0" goto MENU
+
+if "%choice%"=="4" goto STEP_3
+
+if "%choice%"=="0" goto STEP_2
 
 
-goto TWEAKS
-
-
-
-
-
-
+goto TWEAKS_MENU
 
 :: =====================================
 :: POWER MANAGEMENT
@@ -345,11 +721,13 @@ goto TWEAKS
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "POWER MANAGEMENT"
-call :PINK_LINE
+echo ==================================================
+echo          POWER MANAGEMENT
+echo ==================================================
 
 echo.
+
+echo Current Status:
 
 call :CHECK_POWER
 
@@ -372,12 +750,17 @@ set /p choice=Select Option:
 
 
 if "%choice%"=="1" goto ULTIMATE
+
 if "%choice%"=="2" goto HIGH
+
 if "%choice%"=="3" goto BALANCED
-if "%choice%"=="0" goto TWEAKS
+
+if "%choice%"=="0" goto TWEAKS_MENU
 
 
 goto POWER_MENU
+
+
 
 
 
@@ -388,15 +771,11 @@ goto POWER_MENU
 powercfg /setactive e9a42b02-d5df-448d-aa00-03f14749eb61
 
 
-if %errorlevel% neq 0 (
-call :FAILED "Ultimate Performance"
-goto POWER_MENU
-)
-
-
 call :SUCCESS "Ultimate Performance Enabled"
 
 goto POWER_MENU
+
+
 
 
 
@@ -407,15 +786,11 @@ goto POWER_MENU
 powercfg /setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c83d5
 
 
-if %errorlevel% neq 0 (
-call :FAILED "High Performance"
-goto POWER_MENU
-)
-
-
 call :SUCCESS "High Performance Enabled"
 
 goto POWER_MENU
+
+
 
 
 
@@ -426,13 +801,7 @@ goto POWER_MENU
 powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e
 
 
-if %errorlevel% neq 0 (
-call :FAILED "Balanced Power Plan"
-goto POWER_MENU
-)
-
-
-call :SUCCESS "Balanced Power Plan Enabled"
+call :SUCCESS "Balanced Power Enabled"
 
 goto POWER_MENU
 
@@ -452,13 +821,14 @@ goto POWER_MENU
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "GAMING OPTIMIZATION"
-call :PINK_LINE
+echo ==================================================
+echo          GAMING OPTIMIZATION
+echo ==================================================
 
 echo.
 
 call :CHECK_GAME
+
 call :CHECK_DVR
 
 echo.
@@ -473,7 +843,6 @@ echo [3] Disable Xbox DVR
 
 echo [4] Enable Xbox DVR
 
-
 echo.
 
 echo [0] Back
@@ -485,10 +854,14 @@ set /p choice=Select Option:
 
 
 if "%choice%"=="1" goto GAME_ON
+
 if "%choice%"=="2" goto GAME_OFF
+
 if "%choice%"=="3" goto DVR_OFF
+
 if "%choice%"=="4" goto DVR_ON
-if "%choice%"=="0" goto TWEAKS
+
+if "%choice%"=="0" goto TWEAKS_MENU
 
 
 goto GAMING_MENU
@@ -557,6 +930,12 @@ call :SUCCESS "Xbox DVR Enabled"
 
 goto GAMING_MENU
 
+
+
+
+
+
+
 :: =====================================
 :: GPU OPTIMIZATION
 :: =====================================
@@ -567,9 +946,9 @@ goto GAMING_MENU
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "GPU OPTIMIZATION"
-call :PINK_LINE
+echo ==================================================
+echo             GPU OPTIMIZATION
+echo ==================================================
 
 echo.
 
@@ -592,8 +971,10 @@ set /p choice=Select Option:
 
 
 if "%choice%"=="1" goto HAGS_ON
+
 if "%choice%"=="2" goto HAGS_OFF
-if "%choice%"=="0" goto TWEAKS
+
+if "%choice%"=="0" goto TWEAKS_MENU
 
 
 goto GPU_MENU
@@ -607,12 +988,6 @@ goto GPU_MENU
 :HAGS_ON
 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode /t REG_DWORD /d 2 /f >nul
-
-
-if %errorlevel% neq 0 (
-call :FAILED "Enable HAGS"
-goto GPU_MENU
-)
 
 
 call :SUCCESS "HAGS Enabled - Restart Required"
@@ -630,12 +1005,6 @@ goto GPU_MENU
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode /t REG_DWORD /d 1 /f >nul
 
 
-if %errorlevel% neq 0 (
-call :FAILED "Disable HAGS"
-goto GPU_MENU
-)
-
-
 call :SUCCESS "HAGS Disabled - Restart Required"
 
 goto GPU_MENU
@@ -647,30 +1016,35 @@ goto GPU_MENU
 
 
 :: =====================================
-:: GAMING PROFILES
+:: STEP 3
 :: =====================================
 
 
-:PROFILE_MENU
+:STEP_3
 
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "GAMING PROFILES"
-call :PINK_LINE
+echo ==================================================
+echo              STEP 3/3
+echo          GAMING PROFILE
+echo ==================================================
 
 echo.
 
-echo [1] Competitive Gaming Mode
-
-echo [2] Balanced Gaming Mode
-
-echo [3] Battery Saving Mode
+echo Choose a profile:
 
 echo.
 
-echo [0] Back
+echo [1] Competitive Gaming
+
+echo [2] Balanced Gaming
+
+echo [3] Battery Saving
+
+echo.
+
+echo [0] Finish
 
 
 echo.
@@ -679,12 +1053,15 @@ set /p choice=Select Option:
 
 
 if "%choice%"=="1" goto COMPETITIVE
-if "%choice%"=="2" goto BALANCED_MODE
-if "%choice%"=="3" goto BATTERY_MODE
-if "%choice%"=="0" goto TWEAKS
+
+if "%choice%"=="2" goto BALANCED_PROFILE
+
+if "%choice%"=="3" goto BATTERY_PROFILE
+
+if "%choice%"=="0" goto FINISH
 
 
-goto PROFILE_MENU
+goto STEP_3
 
 
 
@@ -694,34 +1071,16 @@ goto PROFILE_MENU
 
 :COMPETITIVE
 
-cls
-
-echo.
-echo Applying Competitive Gaming Mode...
-echo.
-
-
-:: Ultimate Performance
-
 powercfg /setactive e9a42b02-d5df-448d-aa00-03f14749eb61
 
-
-:: Enable Game Mode
-
 reg add "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled /t REG_DWORD /d 1 /f >nul
-
-
-:: Disable Xbox DVR
 
 reg add "HKCU\System\GameConfigStore" /v GameDVR_Enabled /t REG_DWORD /d 0 /f >nul
 
 
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v AppCaptureEnabled /t REG_DWORD /d 0 /f >nul
+call :SUCCESS "Competitive Profile Applied"
 
-
-call :SUCCESS "Competitive Gaming Mode Applied"
-
-goto PROFILE_MENU
+goto STEP_3
 
 
 
@@ -729,55 +1088,62 @@ goto PROFILE_MENU
 
 
 
-:BALANCED_MODE
-
-cls
-
-echo.
-echo Applying Balanced Gaming Mode...
-echo.
-
+:BALANCED_PROFILE
 
 powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e
-
 
 reg add "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled /t REG_DWORD /d 1 /f >nul
 
 
-call :SUCCESS "Balanced Gaming Mode Applied"
+call :SUCCESS "Balanced Profile Applied"
 
-goto PROFILE_MENU
-
-
+goto STEP_3
 
 
 
 
 
-:BATTERY_MODE
 
-cls
 
-echo.
-echo Applying Battery Saving Mode...
-echo.
-
+:BATTERY_PROFILE
 
 powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e
-
 
 reg add "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled /t REG_DWORD /d 0 /f >nul
 
 
-call :SUCCESS "Battery Saving Mode Applied"
+call :SUCCESS "Battery Profile Applied"
 
-goto PROFILE_MENU
-
-
+goto STEP_3
 
 
 
 
+
+
+
+:FINISH
+
+cls
+
+echo.
+echo ==================================================
+echo        REALFPS OPTIMIZATION COMPLETE
+echo ==================================================
+
+echo.
+
+echo All selected optimizations are completed.
+
+echo.
+
+echo Restart Windows is recommended.
+
+echo.
+
+pause
+
+goto MENU
 
 :: =====================================
 :: DIAGNOSTICS
@@ -789,23 +1155,43 @@ goto PROFILE_MENU
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "REALFPS DIAGNOSTICS"
-call :PINK_LINE
+echo ==================================================
+echo             REALFPS DIAGNOSTICS
+echo ==================================================
+
+echo.
+
+echo Diagnostics is used to check:
+echo - Hardware information
+echo - Windows status
+echo - Optimization status
+echo - Driver information
+
+echo.
+
+pause
+
+
+cls
+
+echo.
+echo ==================================================
+echo             SYSTEM INFORMATION
+echo ==================================================
 
 echo.
 
 
 echo CPU:
 
-powershell -command "Get-CimInstance Win32_Processor | Select-Object -ExpandProperty Name"
+powershell -command "Get-CimInstance Win32_Processor | Select -ExpandProperty Name"
 
 
 echo.
 
 echo GPU:
 
-powershell -command "Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name"
+powershell -command "Get-CimInstance Win32_VideoController | Select -ExpandProperty Name"
 
 
 echo.
@@ -819,36 +1205,67 @@ echo.
 
 echo Windows:
 
-powershell -command "Get-CimInstance Win32_OperatingSystem | Select-Object -ExpandProperty Caption"
+powershell -command "Get-CimInstance Win32_OperatingSystem | Select -ExpandProperty Caption"
+
+
+echo.
+
+echo Architecture:
+
+powershell -command "Get-CimInstance Win32_OperatingSystem | Select -ExpandProperty OSArchitecture"
 
 
 echo.
 
 echo GPU Driver:
 
-powershell -command "Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty DriverVersion"
+powershell -command "Get-CimInstance Win32_VideoController | Select -ExpandProperty DriverVersion"
 
 
 echo.
+
+
+echo ==================================================
+echo             OPTIMIZATION STATUS
+echo ==================================================
+
+echo.
+
+
+call :CHECK_POWER
+
+call :CHECK_GAME
+
+call :CHECK_DVR
+
+call :CHECK_HAGS
+
+
+echo.
+
 
 echo Disk:
 
-powershell -command "Get-PSDrive C | Select-Object Used,Free"
+powershell -command "Get-PSDrive C | Select Used,Free"
 
 
 echo.
 
-echo Network:
+
+echo Network Test:
 
 ping 8.8.8.8 -n 4
-
-
-call :LOG "Diagnostics Completed"
 
 
 pause
 
 goto MENU
+
+
+
+
+
+
 
 :: =====================================
 :: INFORMATION
@@ -860,17 +1277,21 @@ goto MENU
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "REALFPS INFORMATION"
-call :PINK_LINE
+echo ==================================================
+echo              REALFPS INFORMATION
+echo ==================================================
 
 echo.
 
 echo [1] About RealFPS
 
-echo [2] Developer Info
+echo.
 
-echo [3] Generate Report
+echo [2] Developer Information
+
+echo.
+
+echo [3] Project Philosophy
 
 echo.
 
@@ -883,8 +1304,11 @@ set /p choice=Select Option:
 
 
 if "%choice%"=="1" goto ABOUT
+
 if "%choice%"=="2" goto DEV_INFO
-if "%choice%"=="3" goto REPORT
+
+if "%choice%"=="3" goto PHILOSOPHY
+
 if "%choice%"=="0" goto MENU
 
 
@@ -896,14 +1320,19 @@ goto INFORMATION
 
 
 
+:: =====================================
+:: ABOUT
+:: =====================================
+
+
 :ABOUT
 
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "ABOUT REALFPS"
-call :PINK_LINE
+echo ==================================================
+echo                 ABOUT REALFPS
+echo ==================================================
 
 echo.
 
@@ -912,54 +1341,8 @@ echo Windows Gaming Optimization Toolkit.
 
 echo.
 
-echo Project:
-echo RealFPS
-
-echo.
-
 echo Version:
 echo %VERSION%
-
-echo.
-
-echo Developer:
-echo %DEVELOPER%
-
-echo.
-
-echo Philosophy:
-echo Real Tweaks
-echo Real Results
-echo No Placebo
-
-pause
-
-goto INFORMATION
-
-
-
-
-
-
-
-:DEV_INFO
-
-cls
-
-echo.
-call :PINK_LINE
-call :CENTER "DEVELOPER INFORMATION"
-call :PINK_LINE
-
-echo.
-
-echo Project:
-echo RealFPS
-
-echo.
-
-echo Developer:
-echo %DEVELOPER%
 
 echo.
 
@@ -968,91 +1351,12 @@ echo %BUILD%
 
 echo.
 
-echo Language:
-echo Windows Batch Script
-
-
-pause
-
-goto INFORMATION
-
-
-
-
-
-
-
-:REPORT
-
-cls
-
-echo Creating RealFPS Report...
-
-
-(
-echo =====================================
-echo        RealFPS System Report
-echo =====================================
-
-echo.
-echo Version:
-echo %VERSION%
-
-echo.
 echo Developer:
 echo %DEVELOPER%
 
 echo.
 
-echo CPU:
-
-powershell -command "Get-CimInstance Win32_Processor ^| Select -ExpandProperty Name"
-
-echo.
-
-echo GPU:
-
-powershell -command "Get-CimInstance Win32_VideoController ^| Select -ExpandProperty Name"
-
-echo.
-
-echo RAM:
-
-powershell -command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,2)"
-
-echo.
-
-echo Power:
-
-powercfg /getactivescheme
-
-
-echo.
-
-echo Game Mode:
-
-reg query "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled
-
-
-echo.
-
-echo Xbox DVR:
-
-reg query "HKCU\System\GameConfigStore" /v GameDVR_Enabled
-
-
-echo.
-
-echo HAGS:
-
-reg query "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode 2^>nul
-
-
-) > RealFPS_Report.txt
-
-
-call :SUCCESS "Report Generated"
-
+pause
 
 goto INFORMATION
 
@@ -1063,147 +1367,42 @@ goto INFORMATION
 
 
 :: =====================================
-:: BACKUP SYSTEM
+:: DEVELOPER
 :: =====================================
 
 
-:BACKUP_MENU
+:DEV_INFO
 
 cls
 
 echo.
-call :PINK_LINE
-call :CENTER "BACKUP AND RESTORE"
-call :PINK_LINE
+echo ==================================================
+echo          DEVELOPER INFORMATION
+echo ==================================================
 
 echo.
 
-echo [1] Backup RealFPS Settings
-
-echo [2] Restore Settings
-
-echo.
-
-echo [0] Back
-
+echo Project:
+echo RealFPS
 
 echo.
 
-set /p choice=Select Option:
+echo Created by:
 
-
-if "%choice%"=="1" goto BACKUP
-if "%choice%"=="2" goto RESTORE_BACKUP
-if "%choice%"=="0" goto PREPARATION
-
-
-goto BACKUP_MENU
-
-
-
-
-
-
-
-:BACKUP
-
-echo Creating Backup...
-
-
-reg export "HKCU\Software\Microsoft\GameBar" RealFPS_GameMode_Backup.reg /y >nul
-
-reg export "HKCU\System\GameConfigStore" RealFPS_DVR_Backup.reg /y >nul
-
-reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" RealFPS_GameDVR_Backup.reg /y >nul
-
-reg export "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" RealFPS_HAGS_Backup.reg /y >nul
-
-
-call :SUCCESS "Backup Created"
-
-
-goto BACKUP_MENU
-
-
-
-
-
-
-
-:RESTORE_BACKUP
-
-echo Restoring Backup...
-
-
-if exist RealFPS_GameMode_Backup.reg reg import RealFPS_GameMode_Backup.reg
-
-if exist RealFPS_DVR_Backup.reg reg import RealFPS_DVR_Backup.reg
-
-if exist RealFPS_GameDVR_Backup.reg reg import RealFPS_GameDVR_Backup.reg
-
-if exist RealFPS_HAGS_Backup.reg reg import RealFPS_HAGS_Backup.reg
-
-
-call :SUCCESS "Restore Completed"
-
-
-goto BACKUP_MENU
-
-
-
-
-
-
-
-:: =====================================
-:: RECOMMENDATION
-:: =====================================
-
-
-:RECOMMEND
-
-cls
-
-echo.
-call :PINK_LINE
-call :CENTER "RECOMMENDED SETTINGS"
-call :PINK_LINE
+echo %DEVELOPER%
 
 echo.
 
+echo Language:
 
-for /f %%a in ('powershell -command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB)"') do set RAM=%%a
-
-
-echo RAM:
-echo %RAM% GB
+echo Windows Batch Script
 
 
 echo.
-
-if %RAM% GEQ 16 (
-echo [OK] System suitable for gaming
-) else (
-echo [INFO] Close background apps
-)
-
-
-echo.
-
-echo Recommended:
-
-echo - Enable Game Mode
-
-echo - Disable Xbox DVR
-
-echo - Update GPU Driver
-
-echo - Use High Performance while plugged in
-
 
 pause
 
-goto PREPARATION
+goto INFORMATION
 
 
 
@@ -1212,7 +1411,51 @@ goto PREPARATION
 
 
 :: =====================================
-:: ENV CHECK
+:: PHILOSOPHY
+:: =====================================
+
+
+:PHILOSOPHY
+
+cls
+
+echo.
+echo ==================================================
+echo          REALFPS PHILOSOPHY
+echo ==================================================
+
+echo.
+
+echo RealFPS follows:
+
+echo.
+
+echo Real Tweaks
+
+echo Real Results
+
+echo No Placebo
+
+echo.
+
+echo The goal is not to promise
+echo unrealistic FPS increases.
+
+echo.
+
+echo RealFPS focuses on:
+echo - Safe changes
+echo - Transparent settings
+echo - Measurable improvements
+
+echo.
+
+pause
+
+goto INFORMATION
+
+:: =====================================
+:: ENVIRONMENT CHECK
 :: =====================================
 
 
@@ -1221,9 +1464,16 @@ goto PREPARATION
 cls
 
 echo.
-echo =====================================
-echo RealFPS Environment Check
-echo =====================================
+echo ==================================================
+echo          REALFPS ENVIRONMENT CHECK
+echo ==================================================
+
+echo.
+
+echo Checking Windows...
+
+ver
+
 
 echo.
 
@@ -1238,12 +1488,48 @@ echo Checking PowerCFG...
 
 powercfg /getactivescheme >nul
 
+if %errorlevel% neq 0 (
+
+echo PowerCFG ERROR
+
+pause
+
+exit
+
+)
+
+
+echo PowerCFG OK
+
 
 echo.
 
-echo System Ready
+echo Checking Registry...
 
-timeout /t 2 >nul
+reg query "HKCU\Software" >nul
+
+
+if %errorlevel% neq 0 (
+
+echo Registry ERROR
+
+pause
+
+exit
+
+)
+
+
+echo Registry OK
+
+
+echo.
+
+echo System Ready.
+
+
+timeout /t 3 >nul
+
 
 exit /b
 
@@ -1254,15 +1540,36 @@ exit /b
 
 
 :: =====================================
-:: DISPLAY FUNCTIONS
+:: BACKUP / RESTORE
 :: =====================================
 
 
-:PINK_LINE
+:BACKUP
 
+cls
+
+echo.
+echo ==================================================
+echo             REALFPS BACKUP
 echo ==================================================
 
-exit /b
+echo.
+
+echo Creating backup...
+
+
+reg export "HKCU\Software\Microsoft\GameBar" RealFPS_GameMode_Backup.reg /y >nul
+
+reg export "HKCU\System\GameConfigStore" RealFPS_DVR_Backup.reg /y >nul
+
+reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" RealFPS_GameDVR_Backup.reg /y >nul
+
+reg export "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" RealFPS_HAGS_Backup.reg /y >nul
+
+
+call :SUCCESS "Backup Created"
+
+goto MENU
 
 
 
@@ -1270,59 +1577,128 @@ exit /b
 
 
 
-:CENTER
+:RESTORE_BACKUP
 
-echo                 %~1
-
-exit /b
-
-
-
-
-
-
-
-:SUCCESS
+cls
 
 echo.
-echo =====================================
-echo [SUCCESS] %~1
-echo =====================================
-
-call :LOG "SUCCESS - %~1"
-
-pause
-
-exit /b
-
-
-
-
-
-
-
-:FAILED
+echo ==================================================
+echo          REALFPS RESTORE
+echo ==================================================
 
 echo.
-echo =====================================
-echo [FAILED] %~1
-echo =====================================
 
-call :LOG "FAILED - %~1"
-
-pause
-
-exit /b
+echo Restoring settings...
 
 
+if exist RealFPS_GameMode_Backup.reg (
+
+reg import RealFPS_GameMode_Backup.reg
+
+)
+
+
+if exist RealFPS_DVR_Backup.reg (
+
+reg import RealFPS_DVR_Backup.reg
+
+)
+
+
+if exist RealFPS_GameDVR_Backup.reg (
+
+reg import RealFPS_GameDVR_Backup.reg
+
+)
+
+
+if exist RealFPS_HAGS_Backup.reg (
+
+reg import RealFPS_HAGS_Backup.reg
+
+)
+
+
+call :SUCCESS "Backup Restored"
+
+goto MENU
 
 
 
+
+
+
+
+:: =====================================
+:: LOG SYSTEM
+:: =====================================
 
 
 :LOG
 
 echo [%date% %time%] %~1 >> RealFPS_Log.txt
+
+exit /b
+
+
+
+
+
+
+
+:: =====================================
+:: SUCCESS MESSAGE
+:: =====================================
+
+
+:SUCCESS
+
+call :LOG "SUCCESS - %~1"
+
+
+echo.
+
+echo ==================================================
+
+echo [SUCCESS]
+
+echo %~1
+
+echo ==================================================
+
+
+pause
+
+exit /b
+
+
+
+
+
+
+
+:: =====================================
+:: FAILED MESSAGE
+:: =====================================
+
+
+:FAILED
+
+call :LOG "FAILED - %~1"
+
+
+echo.
+
+echo ==================================================
+
+echo [FAILED]
+
+echo %~1
+
+echo ==================================================
+
+
+pause
 
 exit /b
 
@@ -1341,7 +1717,11 @@ exit /b
 
 for /f "tokens=4" %%a in ('powercfg /getactivescheme') do set power=%%a
 
-echo Power Plan: %power%
+
+echo Power Plan:
+
+echo %power%
+
 
 exit /b
 
@@ -1357,10 +1737,15 @@ for /f "tokens=3" %%a in ('reg query "HKCU\Software\Microsoft\GameBar" /v AutoGa
 
 
 if "%gm%"=="0x1" (
+
 echo Game Mode: ON
+
 ) else (
+
 echo Game Mode: OFF
+
 )
+
 
 exit /b
 
@@ -1376,10 +1761,15 @@ for /f "tokens=3" %%a in ('reg query "HKCU\System\GameConfigStore" /v GameDVR_En
 
 
 if "%dvr%"=="0x1" (
+
 echo Xbox DVR: ON
+
 ) else (
+
 echo Xbox DVR: OFF
+
 )
+
 
 exit /b
 
@@ -1395,9 +1785,18 @@ for /f "tokens=3" %%a in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\Grap
 
 
 if "%hags%"=="0x2" (
+
 echo HAGS: ON
+
+) else if "%hags%"=="0x1" (
+
+echo HAGS: OFF
+
 ) else (
+
 echo HAGS: DEFAULT
+
 )
+
 
 exit /b
