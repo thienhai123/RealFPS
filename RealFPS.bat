@@ -99,9 +99,9 @@ call :CENTER "RealFPS is a free and open-source"
 
 echo.
 
-echo =====================================
+echo ==================================================
 call :CENTER_PINK "PROJECT INFORMATION"
-echo =====================================
+echo ==================================================
 
 echo.
 
@@ -122,17 +122,17 @@ call :CENTER "Real Results        No Placebo"
 
 echo.
 
-echo =====================================
+echo ==================================================
 call :CENTER_PINK "IMPORTANT NOTICE"
-echo =====================================
+echo ==================================================
 
 echo.
 
-call :CENTER_GREEN "RealFPS should be run as Administrator."
+call :CENTER_WHITE "RealFPS should be run as Administrator."
 
 echo.
 
-call :CENTER_GREEN "Administrator permission is required for system optimization features."
+call :CENTER_WHITE "Administrator permission is required for system optimization features."
 
 echo.
 
