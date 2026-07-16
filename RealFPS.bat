@@ -42,10 +42,6 @@ echo [7] Enable Xbox DVR
 call :CHECK_DVR
 
 echo.
-echo NETWORK
-echo [8] Optimize Network
-echo [9] Restore Network
-
 echo [0] Exit
 echo.
 set /p choice=Choose an option: 
@@ -57,7 +53,6 @@ if "%choice%"=="4" goto GAMEON
 if "%choice%"=="5" goto GAMEOFF
 if "%choice%"=="6" goto DVR_OFF
 if "%choice%"=="7" goto DVR_ON
-
 if "%choice%"=="0" exit
 
 echo.
@@ -147,5 +142,39 @@ if "%dvr%"=="0x1" (
 ) else (
     echo Xbox DVR: OFF
 )
+
+exit /b
+
+:CHECK_GAME
+
+for /f "tokens=3" %%a in ('reg query "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled 2^>nul') do set gm=%%a
+
+if "%gm%"=="0x1" (
+echo Game Mode: ON
+) else (
+echo Game Mode: OFF
+)
+
+exit /b
+
+
+:CHECK_DVR
+
+for /f "tokens=3" %%a in ('reg query "HKCU\System\GameConfigStore" /v GameDVR_Enabled 2^>nul') do set dvr=%%a
+
+if "%dvr%"=="0x1" (
+echo Xbox DVR: ON
+) else (
+echo Xbox DVR: OFF
+)
+
+exit /b
+
+
+:CHECK_POWER
+
+for /f "tokens=5" %%a in ('powercfg /getactivescheme') do set power=%%a
+
+echo Current Power Plan: %power%
 
 exit /b
