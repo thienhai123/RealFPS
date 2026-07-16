@@ -17,7 +17,13 @@ echo    Real Results
 echo    No Placebo
 echo.
 echo    Created by Nguyen Thanh Thien Hai
+
+echo STATUS
+call :CHECK_POWER
+call :CHECK_GAME
+call :CHECK_DVR
 echo.
+
 echo POWER
 echo [1] Ultimate Performance
 echo [2] High Performance
@@ -104,6 +110,40 @@ echo.
 echo Xbox DVR Enabled
 pause
 goto MENU
+
+:CHECK_POWER
+
+for /f "tokens=5" %%a in ('powercfg /getactivescheme') do set power=%%a
+
+echo Power Plan: %power%
+
+exit /b
+
+
+:CHECK_GAME
+
+for /f "tokens=3" %%a in ('reg query "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled 2^>nul') do set gm=%%a
+
+if "%gm%"=="0x1" (
+    echo Game Mode: ON
+) else (
+    echo Game Mode: OFF
+)
+
+exit /b
+
+
+:CHECK_DVR
+
+for /f "tokens=3" %%a in ('reg query "HKCU\System\GameConfigStore" /v GameDVR_Enabled 2^>nul') do set dvr=%%a
+
+if "%dvr%"=="0x1" (
+    echo Xbox DVR: ON
+) else (
+    echo Xbox DVR: OFF
+)
+
+exit /b
 
 :CHECK_GAME
 
