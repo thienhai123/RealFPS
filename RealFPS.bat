@@ -8,17 +8,17 @@ set "BUILD=2026.07"
 set "DEVELOPER=Nguyen Thanh Thien Hai"
 
 
-:: =====================================
+:: ==================================================
 :: REALFPS START
-:: =====================================
+:: ==================================================
 
 call :ENV_CHECK
 call :INTRO
 
 
-:: =====================================
+:: ==================================================
 :: MAIN MENU
-:: =====================================
+:: ==================================================
 
 :MENU
 
@@ -72,9 +72,9 @@ goto MENU
 
 
 
-:: =====================================
+:: ==================================================
 :: INTRO
-:: =====================================
+:: ==================================================
 
 :INTRO
 
@@ -128,15 +128,15 @@ echo ==================================================
 
 echo.
 
-call :CENTER_WHITE "RealFPS should be run as Administrator."
+call :CENTER "RealFPS should be run as Administrator."
 
 echo.
 
-call :CENTER_WHITE "Administrator permission is required for system optimization features."
+call :CENTER "Administrator permission is required for system optimization features."
 
 echo.
 
-echo =====================================
+echo ==================================================
 
 pause
 
