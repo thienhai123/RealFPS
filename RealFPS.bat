@@ -538,6 +538,9 @@ call :SUCCESS "Battery Saving Mode Applied"
 
 goto MENU_PROFILE
 
+
+exit /b
+
 :MENU_INFO
 
 cls
