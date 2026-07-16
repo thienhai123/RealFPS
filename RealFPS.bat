@@ -88,6 +88,7 @@ echo GPU
 echo [9] Enable HAGS
 echo [10] Disable HAGS
 call :CHECK_HAGS
+echo.
 
 
 echo INFORMATION
