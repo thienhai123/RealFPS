@@ -132,6 +132,38 @@ echo =====================================
 echo GAME MODE
 echo =====================================
 
+:MENU_GAMING
+cls
+
+echo.
+echo ==================================================
+echo                    GAMING
+echo ==================================================
+echo.
+
+call :CHECK_GAME
+call :CHECK_DVR
+
+echo.
+echo [1] Enable Game Mode
+echo [2] Disable Game Mode
+echo.
+echo [3] Disable Xbox DVR
+echo [4] Enable Xbox DVR
+echo.
+echo [0] Back
+echo.
+
+set /p choice=Select Option:
+
+if "%choice%"=="1" goto GAMEON
+if "%choice%"=="2" goto GAMEOFF
+if "%choice%"=="3" goto DVR_OFF
+if "%choice%"=="4" goto DVR_ON
+if "%choice%"=="0" goto MENU
+
+goto MENU_GAMING
+
 :GAMEON
 
 reg add "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled /t REG_DWORD /d 1 /f >nul
@@ -190,7 +222,34 @@ if %errorlevel% neq 0 (
 call :SUCCESS "Xbox DVR Enabled"
 goto MENU
 
+:MENU_TOOLS
+cls
 
+echo.
+echo ==================================================
+echo                     TOOLS
+echo ==================================================
+echo.
+
+echo [1] Create Restore Point
+echo [2] System Scan
+echo [3] Backup Settings
+echo [4] Restore Settings
+echo [5] Gaming Diagnostics
+echo.
+echo [0] Back
+echo.
+
+set /p choice=Select Option:
+
+if "%choice%"=="1" goto RESTORE
+if "%choice%"=="2" goto SYSTEM_SCAN
+if "%choice%"=="3" goto BACKUP
+if "%choice%"=="4" goto RESTORE_BACKUP
+if "%choice%"=="5" goto DIAGNOSTICS
+if "%choice%"=="0" goto MENU
+
+goto MENU_TOOLS
 
 :SYSTEM_SCAN
 
@@ -307,6 +366,32 @@ echo =====================================
 echo GPU HARDWARE ACCELERATION
 echo =====================================
 
+:MENU_GPU
+cls
+
+echo.
+echo ==================================================
+echo                      GPU
+echo ==================================================
+echo.
+
+call :CHECK_HAGS
+
+echo.
+echo [1] Enable HAGS
+echo [2] Disable HAGS
+echo.
+echo [0] Back
+echo.
+
+set /p choice=Select Option:
+
+if "%choice%"=="1" goto HAGS_ON
+if "%choice%"=="2" goto HAGS_OFF
+if "%choice%"=="0" goto MENU
+
+goto MENU_GPU
+
 :HAGS_ON
 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode /t REG_DWORD /d 2 /f >nul
@@ -398,7 +483,30 @@ call :LOG "SYSTEM DIAGNOSTICS COMPLETED"
 pause
 goto MENU
 
+:MENU_PROFILE
+cls
 
+echo.
+echo ==================================================
+echo                   PROFILES
+echo ==================================================
+echo.
+
+echo [1] Competitive Mode
+echo [2] Balanced Mode
+echo [3] Battery Saver
+echo.
+echo [0] Back
+echo.
+
+set /p choice=Select Option:
+
+if "%choice%"=="1" goto COMPETITIVE
+if "%choice%"=="2" goto BALANCED_MODE
+if "%choice%"=="3" goto BATTERY_MODE
+if "%choice%"=="0" goto MENU
+
+goto MENU_PROFILE
 
 :COMPETITIVE
 
@@ -472,7 +580,34 @@ call :SUCCESS "Battery Saving Mode Applied"
 
 goto MENU
 
+:MENU_INFO
+cls
 
+echo.
+echo ==================================================
+echo                  INFORMATION
+echo ==================================================
+echo.
+
+echo [1] About RealFPS
+echo [2] Hardware Detection
+echo [3] Recommended Settings
+echo [4] Generate Report
+echo [5] Developer Info
+echo.
+echo [0] Back
+echo.
+
+set /p choice=Select Option:
+
+if "%choice%"=="1" goto ABOUT
+if "%choice%"=="2" goto HARDWARE_SCAN
+if "%choice%"=="3" goto RECOMMEND
+if "%choice%"=="4" goto REPORT
+if "%choice%"=="5" goto DEV_INFO
+if "%choice%"=="0" goto MENU
+
+goto MENU_INFO
 
 :ABOUT
 
