@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="assets/logo.png" width="180">
+</p>
+
+<h1 align="center">RealFPS</h1>
+
 # 🎮 RealFPS - Windows Gaming Optimizer
 
 A lightweight Windows gaming optimizer focused on measurable improvements.
