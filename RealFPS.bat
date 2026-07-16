@@ -479,6 +479,10 @@ echo             About RealFPS
 echo =====================================
 echo.
 
+echo RealFPS is a free and open-source gaming optimizer
+echo built to improve Windows performance.
+echo.
+
 echo Version:
 echo %VERSION%
 
@@ -935,8 +939,18 @@ powercfg /getactivescheme >nul
 echo.
 echo System Ready
 
+echo.
+echo ██████  ███████  █████  ██      ███████ ██████  ███████
+echo ██   ██ ██      ██   ██ ██      ██      ██   ██ ██
+echo ██████  █████   ███████ ██      █████   ██████  █████
+echo ██   ██ ██      ██   ██ ██      ██      ██   ██ ██
+echo ██   ██ ███████ ██   ██ ███████ ███████ ██   ██ ███████
+echo.
 
-timeout /t 2 >nul
+echo RealFPS is a free and open-source gaming optimizer
+echo built to improve Windows performance.
+
+timeout /t 3 >nul
 
 
 exit /b
