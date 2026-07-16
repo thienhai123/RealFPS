@@ -1,109 +1,165 @@
-# RealFPS
+<div align="center">
 
-Windows Gaming Optimizer focused on measurable improvements.
+# ⚡ RealFPS
 
-![Version](https://img.shields.io/badge/version-v1.0--beta-green)
+### Windows Gaming Optimizer
+
+Only Measurable Optimizations  
+Real Tweaks • Real Results • No Placebo
+
+![Version](https://img.shields.io/badge/version-1.0--beta-green)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-blue)
 ![License](https://img.shields.io/badge/license-MIT-yellow)
+![Language](https://img.shields.io/badge/language-Batch-brightgreen)
 
-## Features
+</div>
 
-- Power Plan Management
-- Game Mode Toggle
-- Xbox DVR Toggle
-- HAGS Toggle
-- Restore Point Creation
-- Backup & Restore Settings
+---
+
+## 📖 About
+
+RealFPS is a lightweight Windows gaming optimization toolkit built with Batch Script.
+
+The goal of this project is simple:
+
+- Improve gaming performance using measurable optimizations
+- Avoid placebo tweaks
+- Keep changes transparent and reversible
+- Stay lightweight and easy to use
+
+---
+
+## ✨ Features
+
+### ⚡ Power Management
+
+- Ultimate Performance
+- High Performance
+- Balanced
+
+### 🎮 Gaming
+
+- Enable Game Mode
+- Disable Game Mode
+
+### 📹 Xbox DVR
+
+- Enable Xbox DVR
+- Disable Xbox DVR
+
+### 🖥️ GPU
+
+- Enable HAGS
+- Disable HAGS
+
+### 💾 Backup & Recovery
+
+- Create Restore Point
+- Backup RealFPS Settings
+- Restore RealFPS Settings
+
+### 🔧 Diagnostics
+
 - Hardware Detection
 - Gaming Diagnostics
+- System Information Scan
+- Recommendation Engine
 - Report Generator
-- Gaming Profiles
 
-## Installation
+### 🎯 Gaming Profiles
 
-1. Download RealFPS.bat
-2. Right click
-3. Run as Administrator
+#### Competitive Gaming Mode
 
-## License
+- Ultimate Performance
+- Game Mode ON
+- Xbox DVR OFF
 
-MIT License
+#### Balanced Gaming Mode
 
-# 🎮 RealFPS - Windows Gaming Optimizer
+- Balanced Power Plan
+- Game Mode ON
 
-A lightweight Windows gaming optimizer focused on measurable improvements.
+#### Battery Saving Mode
 
-> ⚡ Real tweaks. Real results. No placebo.
-
----
-
-# 🎯 Philosophy
-
-RealFPS was created with one simple goal:
-
-Only include tweaks that provide measurable benefits.
-
-❌ No placebo tweaks
-
-❌ No registry spam
-
-❌ No service massacre
-
-✅ Only measurable optimizations
+- Balanced Power Plan
+- Game Mode OFF
 
 ---
 
-# 📜 Core Principles
+## 📥 Installation
 
-## 🔬 Rule #1 - No Placebo Tweaks
-
-Every tweak must have measurable impact.
-
----
-
-## 📊 Rule #2 - Evidence First
-
-Tweaks are added only when supported by:
-
-- 📖 Official Microsoft documentation
-- 🧪 Technical documentation
-- 👥 Community testing
-- 📈 Real-world benchmarks
+1. Download `RealFPS.bat`
+2. Right-click the file
+3. Select **Run as Administrator**
+4. Choose the desired optimization
 
 ---
 
-## 🛡️ Rule #3 - Do Not Break Windows
+## 🖼 Screenshot
 
-System stability is more important than tiny FPS gains.
-
----
-
-# 🚀 Current Features
-
-- ⚡ Power Plans
-- 🎮 Game Mode
-- 📹 Xbox DVR
-- 🧹 Clean Temp
-- 📋 System Status
-- 🎯 Gaming Pack
+Coming Soon
 
 ---
 
-# 🗺️ Roadmap
+## 📋 Requirements
 
-## v0.1
+- Windows 10
+- Windows 11
+- Administrator Privileges
+- PowerShell Enabled
 
-- ⚡ Power Plans
-- 🎮 Game Mode
-- 📹 Xbox DVR
-- 🧹 Clean Temp
+---
 
-## v0.2
+## ⚠ Disclaimer
 
-- 🌐 Network Optimization
-- 🔧 Services
+RealFPS only applies documented Windows settings.
 
-## v1.0
+No hidden registry tweaks.
 
-- 🖥️ GUI Application
-- 📦 EXE Release
+No telemetry.
+
+No bundled software.
+
+No placebo optimizations.
+
+---
+
+## 🚀 Roadmap
+
+### Version 1.1
+
+- Better hardware detection
+- Improved diagnostics
+- Cleaner user interface
+- Additional system checks
+
+### Version 1.2
+
+- Auto optimization recommendations
+- Improved backup system
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+See the LICENSE file for details.
+
+---
+
+## 👨‍💻 Developer
+
+**Nguyen Thanh Thien Hai**
+
+Graphic Designer • Windows Enthusiast • Performance Tuning Hobbyist
+
+---
+
+<div align="center">
+
+### RealFPS
+
+**Only Measurable Optimizations**
+
+</div>
