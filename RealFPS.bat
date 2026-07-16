@@ -23,15 +23,14 @@ call :ENV_CHECK
 :MENU
 cls
 echo.
-echo ╔══════════════════════════════════════════════╗
-echo ║                    REALFPS                   ║
-echo ║          Windows Gaming Optimizer            ║
-echo ║               Version %VERSION%              ║
-echo ╠══════════════════════════════════════════════╣
-echo ║      Real Tweaks ^| Real Results ^| No Placebo      ║
-echo ╚══════════════════════════════════════════════╝
+echo ==================================================
+echo                    REALFPS
+echo.
+echo            Windows Gaming Optimizer
+echo                 Version %VERSION%
 echo.
 echo      Real Tweaks ^| Real Results ^| No Placebo
+echo ==================================================
 echo.
 
 echo --------------------------------------------------
