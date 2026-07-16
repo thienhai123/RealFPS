@@ -1,8 +1,33 @@
-<p align="center">
-  <img src="assets/logo.png" width="180">
-</p>
+# RealFPS
 
-<h1 align="center">RealFPS</h1>
+Windows Gaming Optimizer focused on measurable improvements.
+
+![Version](https://img.shields.io/badge/version-v1.0--beta-green)
+![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-blue)
+![License](https://img.shields.io/badge/license-MIT-yellow)
+
+## Features
+
+- Power Plan Management
+- Game Mode Toggle
+- Xbox DVR Toggle
+- HAGS Toggle
+- Restore Point Creation
+- Backup & Restore Settings
+- Hardware Detection
+- Gaming Diagnostics
+- Report Generator
+- Gaming Profiles
+
+## Installation
+
+1. Download RealFPS.bat
+2. Right click
+3. Run as Administrator
+
+## License
+
+MIT License
 
 # 🎮 RealFPS - Windows Gaming Optimizer
 
