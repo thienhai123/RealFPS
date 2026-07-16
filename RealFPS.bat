@@ -147,9 +147,9 @@ echo Invalid option.
 pause
 exit /b
 
-rem =====================================
-rem POWER MANAGEMENT
-rem =====================================
+echo =====================================
+echo POWER MANAGEMENT
+echo =====================================
 
 :ULTIMATE
 
@@ -191,9 +191,9 @@ if %errorlevel% neq 0 (
 call :SUCCESS "Balanced Power Plan Enabled"
 goto MENU
 
-rem =====================================
-rem GAME MODE
-rem =====================================
+echo =====================================
+echo GAME MODE
+echo =====================================
 
 :GAMEON
 
@@ -221,9 +221,9 @@ if %errorlevel% neq 0 (
 call :SUCCESS "Game Mode Disabled"
 goto MENU
 
-rem =====================================
-rem XBOX DVR
-rem =====================================
+echo =====================================
+echo XBOX DVR
+echo =====================================
 
 :DVR_OFF
 
@@ -296,9 +296,9 @@ echo.
 pause
 goto MENU
 
-rem =====================================
-rem BACKUP SYSTEM
-rem =====================================
+echo =====================================
+echo BACKUP SYSTEM
+echo =====================================
 
 :BACKUP
 
@@ -366,9 +366,9 @@ if %errorlevel% neq 0 (
 call :SUCCESS "Restore Point Created"
 goto MENU
 
-rem =====================================
-rem GPU HARDWARE ACCELERATION
-rem =====================================
+echo =====================================
+echo GPU HARDWARE ACCELERATION
+echo =====================================
 
 :HAGS_ON
 
@@ -679,9 +679,9 @@ call :LOG "Recommendation Generated"
 pause
 goto MENU
 
-rem =====================================
-rem REPORT GENERATOR
-rem =====================================
+echo =====================================
+echo REPORT GENERATOR
+echo =====================================
 
 :REPORT
 
