@@ -7,6 +7,7 @@ set VERSION=1.0-beta
 set BUILD=2026.07
 set DEVELOPER=Nguyen Thanh Thien Hai
 
+
 rem =====================================
 rem RealFPS - Windows Gaming Optimizer
 rem Safe Gaming Optimization Toolkit
@@ -43,6 +44,7 @@ echo.
 echo ==================================================
 echo.
 
+
 set /p choice=Select Option:
 
 
@@ -59,6 +61,7 @@ goto MENU
 
 
 :MENU_POWER
+
 cls
 
 echo.
@@ -77,6 +80,7 @@ echo.
 echo [0] Back
 echo.
 
+
 set /p choice=Select Option:
 
 
@@ -93,13 +97,17 @@ goto MENU_POWER
 
 powercfg /setactive e9a42b02-d5df-448d-aa00-03f14749eb61
 
+
 if errorlevel 1 (
-    call :FAILED "Ultimate Performance"
-    goto MENU_POWER
+call :FAILED "Ultimate Performance"
+goto MENU_POWER
 )
 
+
 call :SUCCESS "Ultimate Performance Enabled"
+
 goto MENU_POWER
+
 
 
 
@@ -107,13 +115,17 @@ goto MENU_POWER
 
 powercfg /setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c83d5
 
+
 if errorlevel 1 (
-    call :FAILED "High Performance"
-    goto MENU_POWER
+call :FAILED "High Performance"
+goto MENU_POWER
 )
 
+
 call :SUCCESS "High Performance Enabled"
+
 goto MENU_POWER
+
 
 
 
@@ -121,12 +133,15 @@ goto MENU_POWER
 
 powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e
 
+
 if errorlevel 1 (
-    call :FAILED "Balanced Power Plan"
-    goto MENU_POWER
+call :FAILED "Balanced Power Plan"
+goto MENU_POWER
 )
 
+
 call :SUCCESS "Balanced Power Plan Enabled"
+
 goto MENU_POWER
 
 
@@ -134,6 +149,7 @@ goto MENU_POWER
 
 
 :MENU_GAMING
+
 cls
 
 echo.
@@ -142,8 +158,10 @@ echo                    GAMING
 echo ==================================================
 echo.
 
+
 call :CHECK_GAME
 call :CHECK_DVR
+
 
 echo.
 echo [1] Enable Game Mode
@@ -155,6 +173,7 @@ echo.
 echo [0] Back
 echo.
 
+
 set /p choice=Select Option:
 
 
@@ -164,7 +183,9 @@ if "%choice%"=="3" goto DVR_OFF
 if "%choice%"=="4" goto DVR_ON
 if "%choice%"=="0" goto MENU
 
+
 goto MENU_GAMING
+
 
 
 
@@ -172,13 +193,17 @@ goto MENU_GAMING
 
 reg add "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled /t REG_DWORD /d 1 /f >nul
 
+
 if errorlevel 1 (
-    call :FAILED "Enable Game Mode"
-    goto MENU_GAMING
+call :FAILED "Enable Game Mode"
+goto MENU_GAMING
 )
 
+
 call :SUCCESS "Game Mode Enabled"
+
 goto MENU_GAMING
+
 
 
 
@@ -186,13 +211,17 @@ goto MENU_GAMING
 
 reg add "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled /t REG_DWORD /d 0 /f >nul
 
+
 if errorlevel 1 (
-    call :FAILED "Disable Game Mode"
-    goto MENU_GAMING
+call :FAILED "Disable Game Mode"
+goto MENU_GAMING
 )
 
+
 call :SUCCESS "Game Mode Disabled"
+
 goto MENU_GAMING
+
 
 
 
@@ -204,12 +233,15 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v AppCaptureEn
 
 
 if errorlevel 1 (
-    call :FAILED "Disable Xbox DVR"
-    goto MENU_GAMING
+call :FAILED "Disable Xbox DVR"
+goto MENU_GAMING
 )
 
+
 call :SUCCESS "Xbox DVR Disabled"
+
 goto MENU_GAMING
+
 
 
 
@@ -221,175 +253,14 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v AppCaptureEn
 
 
 if errorlevel 1 (
-    call :FAILED "Enable Xbox DVR"
-    goto MENU_GAMING
+call :FAILED "Enable Xbox DVR"
+goto MENU_GAMING
 )
+
 
 call :SUCCESS "Xbox DVR Enabled"
+
 goto MENU_GAMING
-
-:MENU_TOOLS
-cls
-
-echo.
-echo ==================================================
-echo                     TOOLS
-echo ==================================================
-echo.
-
-echo [1] Create Restore Point
-echo [2] System Scan
-echo [3] Backup Settings
-echo [4] Restore Settings
-echo [5] Gaming Diagnostics
-echo.
-echo [0] Back
-echo.
-
-set /p choice=Select Option:
-
-
-if "%choice%"=="1" goto RESTORE
-if "%choice%"=="2" goto SYSTEM_SCAN
-if "%choice%"=="3" goto BACKUP
-if "%choice%"=="4" goto RESTORE_BACKUP
-if "%choice%"=="5" goto DIAGNOSTICS
-if "%choice%"=="0" goto MENU
-
-goto MENU_TOOLS
-
-
-
-:SYSTEM_SCAN
-
-cls
-
-echo.
-echo =====================================
-echo        RealFPS System Scan
-echo =====================================
-echo.
-
-echo CPU:
-powershell -command "Get-CimInstance Win32_Processor | Select-Object -ExpandProperty Name"
-
-echo.
-echo GPU:
-powershell -command "Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name"
-
-echo.
-echo RAM:
-powershell -command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB,2)"
-echo GB
-
-echo.
-echo Windows:
-powershell -command "Get-CimInstance Win32_OperatingSystem | Select-Object -ExpandProperty Caption"
-
-echo.
-echo Architecture:
-powershell -command "Get-CimInstance Win32_OperatingSystem | Select-Object -ExpandProperty OSArchitecture"
-
-echo.
-echo Power Plan:
-powercfg /getactivescheme
-
-pause
-
-goto MENU_TOOLS
-
-
-
-:BACKUP
-
-cls
-
-echo.
-echo =====================================
-echo          BACKUP SETTINGS
-echo =====================================
-echo.
-
-echo Creating Backup...
-
-
-reg export "HKCU\Software\Microsoft\GameBar" RealFPS_GameMode_Backup.reg /y >nul
-
-reg export "HKCU\System\GameConfigStore" RealFPS_DVR_Backup.reg /y >nul
-
-reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" RealFPS_GameDVR_Backup.reg /y >nul
-
-reg export "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" RealFPS_HAGS_Backup.reg /y >nul
-
-
-call :SUCCESS "Backup Created"
-
-goto MENU_TOOLS
-
-
-
-:RESTORE_BACKUP
-
-cls
-
-echo.
-echo =====================================
-echo        RESTORE SETTINGS
-echo =====================================
-echo.
-
-
-if exist RealFPS_GameMode_Backup.reg (
-    reg import RealFPS_GameMode_Backup.reg
-)
-
-if exist RealFPS_DVR_Backup.reg (
-    reg import RealFPS_DVR_Backup.reg
-)
-
-if exist RealFPS_GameDVR_Backup.reg (
-    reg import RealFPS_GameDVR_Backup.reg
-)
-
-if exist RealFPS_HAGS_Backup.reg (
-    reg import RealFPS_HAGS_Backup.reg
-)
-
-
-call :SUCCESS "Backup Restored"
-
-goto MENU_TOOLS
-
-
-
-:RESTORE
-
-cls
-
-echo.
-echo =====================================
-echo        RESTORE POINT
-echo =====================================
-echo.
-
-echo Creating Restore Point...
-
-
-powershell -command "Checkpoint-Computer -Description 'Before RealFPS Tweak' -RestorePointType MODIFY_SETTINGS"
-
-
-if errorlevel 1 (
-    call :FAILED "Create Restore Point"
-    goto MENU_TOOLS
-)
-
-
-call :SUCCESS "Restore Point Created"
-
-goto MENU_TOOLS
-
-
-
 
 :MENU_GPU
 
@@ -410,6 +281,7 @@ echo.
 echo [0] Back
 echo.
 
+
 set /p choice=Select Option:
 
 
@@ -421,14 +293,15 @@ goto MENU_GPU
 
 
 
+
 :HAGS_ON
 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode /t REG_DWORD /d 2 /f >nul
 
 
 if errorlevel 1 (
-    call :FAILED "Enable HAGS"
-    goto MENU_GPU
+call :FAILED "Enable HAGS"
+goto MENU_GPU
 )
 
 
@@ -438,20 +311,22 @@ goto MENU_GPU
 
 
 
+
 :HAGS_OFF
 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode /t REG_DWORD /d 1 /f >nul
 
 
 if errorlevel 1 (
-    call :FAILED "Disable HAGS"
-    goto MENU_GPU
+call :FAILED "Disable HAGS"
+goto MENU_GPU
 )
 
 
 call :SUCCESS "HAGS Disabled - Restart Required"
 
 goto MENU_GPU
+
 
 
 
@@ -473,6 +348,7 @@ echo.
 echo [0] Back
 echo.
 
+
 set /p choice=Select Option:
 
 
@@ -485,8 +361,10 @@ goto MENU_PROFILE
 
 
 
+
 :COMPETITIVE
 
+echo.
 echo Applying Competitive Gaming Mode...
 
 
@@ -495,7 +373,9 @@ powercfg /setactive e9a42b02-d5df-448d-aa00-03f14749eb61
 
 reg add "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled /t REG_DWORD /d 1 /f >nul
 
+
 reg add "HKCU\System\GameConfigStore" /v GameDVR_Enabled /t REG_DWORD /d 0 /f >nul
+
 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v AppCaptureEnabled /t REG_DWORD /d 0 /f >nul
 
@@ -506,8 +386,11 @@ goto MENU_PROFILE
 
 
 
+
+
 :BALANCED_MODE
 
+echo.
 echo Applying Balanced Gaming Mode...
 
 
@@ -523,8 +406,11 @@ goto MENU_PROFILE
 
 
 
+
+
 :BATTERY_MODE
 
+echo.
 echo Applying Battery Saving Mode...
 
 
@@ -539,7 +425,13 @@ call :SUCCESS "Battery Saving Mode Applied"
 goto MENU_PROFILE
 
 
+
+
 exit /b
+
+
+
+
 
 :MENU_INFO
 
@@ -560,6 +452,7 @@ echo.
 echo [0] Back
 echo.
 
+
 set /p choice=Select Option:
 
 
@@ -570,7 +463,9 @@ if "%choice%"=="4" goto REPORT
 if "%choice%"=="5" goto DEV_INFO
 if "%choice%"=="0" goto MENU
 
+
 goto MENU_INFO
+
 
 
 
@@ -607,6 +502,7 @@ goto MENU_INFO
 
 
 
+
 :HARDWARE_SCAN
 
 cls
@@ -629,7 +525,7 @@ powershell -command "Get-CimInstance Win32_VideoController | Select-Object -Expa
 
 echo.
 echo RAM:
-powershell -command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB,2); Write-Host 'GB'"
+powershell -command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB,2); Write-Host GB"
 
 
 echo.
@@ -642,15 +538,9 @@ echo Architecture:
 powershell -command "Get-CimInstance Win32_OperatingSystem | Select-Object OSArchitecture"
 
 
-call :LOG "Hardware Detection Completed"
-
-
 pause
 
 goto MENU_INFO
-
-
-
 
 :RECOMMEND
 
@@ -674,10 +564,11 @@ echo.
 echo Recommended:
 echo.
 
+
 if %RAM% GEQ 16 (
-    echo [OK] RAM suitable for gaming
+echo [OK] RAM suitable for gaming
 ) else (
-    echo [INFO] Close background apps
+echo [INFO] Close background apps
 )
 
 
@@ -709,6 +600,221 @@ goto MENU_INFO
 
 
 
+
+
+:MENU_TOOLS
+
+cls
+
+echo.
+echo ==================================================
+echo                     TOOLS
+echo ==================================================
+echo.
+
+echo [1] Create Restore Point
+echo [2] System Scan
+echo [3] Backup Settings
+echo [4] Restore Settings
+echo [5] Gaming Diagnostics
+echo.
+echo [0] Back
+echo.
+
+
+set /p choice=Select Option:
+
+
+if "%choice%"=="1" goto RESTORE
+if "%choice%"=="2" goto SYSTEM_SCAN
+if "%choice%"=="3" goto BACKUP
+if "%choice%"=="4" goto RESTORE_BACKUP
+if "%choice%"=="5" goto DIAGNOSTICS
+if "%choice%"=="0" goto MENU
+
+
+goto MENU_TOOLS
+
+
+
+
+
+:SYSTEM_SCAN
+
+cls
+
+echo.
+echo =====================================
+echo        RealFPS System Scan
+echo =====================================
+echo.
+
+
+echo CPU:
+powershell -command "Get-CimInstance Win32_Processor | Select-Object -ExpandProperty Name"
+
+
+echo.
+echo GPU:
+powershell -command "Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name"
+
+
+echo.
+echo RAM:
+powershell -command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB,2)"
+echo GB
+
+
+echo.
+echo Windows:
+powershell -command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption"
+
+
+echo.
+echo Power Plan:
+powercfg /getactivescheme
+
+
+pause
+
+goto MENU_TOOLS
+
+
+
+
+
+:BACKUP
+
+cls
+
+echo Creating Backup...
+
+
+reg export "HKCU\Software\Microsoft\GameBar" RealFPS_GameMode_Backup.reg /y >nul
+
+reg export "HKCU\System\GameConfigStore" RealFPS_DVR_Backup.reg /y >nul
+
+reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" RealFPS_GameDVR_Backup.reg /y >nul
+
+reg export "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" RealFPS_HAGS_Backup.reg /y >nul
+
+
+call :SUCCESS "Backup Created"
+
+
+goto MENU_TOOLS
+
+
+
+
+
+:RESTORE_BACKUP
+
+cls
+
+echo Restoring Backup...
+
+
+if exist RealFPS_GameMode_Backup.reg (
+reg import RealFPS_GameMode_Backup.reg
+)
+
+
+if exist RealFPS_DVR_Backup.reg (
+reg import RealFPS_DVR_Backup.reg
+)
+
+
+if exist RealFPS_GameDVR_Backup.reg (
+reg import RealFPS_GameDVR_Backup.reg
+)
+
+
+if exist RealFPS_HAGS_Backup.reg (
+reg import RealFPS_HAGS_Backup.reg
+)
+
+
+call :SUCCESS "Backup Restored"
+
+
+goto MENU_TOOLS
+
+
+
+
+
+:RESTORE
+
+cls
+
+echo Creating Restore Point...
+
+
+powershell -command "Checkpoint-Computer -Description 'Before RealFPS Tweak' -RestorePointType MODIFY_SETTINGS"
+
+
+if errorlevel 1 (
+call :FAILED "Create Restore Point"
+goto MENU_TOOLS
+)
+
+
+call :SUCCESS "Restore Point Created"
+
+
+goto MENU_TOOLS
+
+
+
+
+
+:DIAGNOSTICS
+
+cls
+
+echo.
+echo =====================================
+echo      RealFPS Gaming Diagnostics
+echo =====================================
+echo.
+
+
+echo CPU:
+powershell -command "Get-CimInstance Win32_Processor | Select-Object -ExpandProperty Name"
+
+
+echo.
+echo GPU:
+powershell -command "Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name"
+
+
+echo.
+echo Driver:
+powershell -command "Get-CimInstance Win32_VideoController | Select-Object DriverVersion"
+
+
+echo.
+echo Disk:
+powershell -command "Get-PSDrive C | Select-Object Used,Free"
+
+
+echo.
+echo Network:
+ping 8.8.8.8 -n 4
+
+
+call :LOG "Diagnostics Completed"
+
+
+pause
+
+goto MENU_TOOLS
+
+
+
+
+
 :REPORT
 
 cls
@@ -716,66 +822,33 @@ cls
 echo Creating RealFPS Report...
 
 
-(
-echo =====================================
-echo        RealFPS System Report
-echo =====================================
-
-echo.
-echo Version:
-echo %VERSION%
-
-echo.
-echo Date:
-echo %date% %time%
+echo ===================================== > RealFPS_Report.txt
+echo RealFPS System Report >> RealFPS_Report.txt
+echo ===================================== >> RealFPS_Report.txt
 
 
-echo.
-echo ===== HARDWARE =====
+echo. >> RealFPS_Report.txt
+
+echo Version: >> RealFPS_Report.txt
+echo %VERSION% >> RealFPS_Report.txt
 
 
-echo CPU:
-powershell -command "Get-CimInstance Win32_Processor ^| Select-Object -ExpandProperty Name"
+echo. >> RealFPS_Report.txt
+
+echo CPU: >> RealFPS_Report.txt
+powershell -command "Get-CimInstance Win32_Processor | Select-Object -ExpandProperty Name" >> RealFPS_Report.txt
 
 
-echo.
-echo GPU:
-powershell -command "Get-CimInstance Win32_VideoController ^| Select-Object -ExpandProperty Name"
+echo. >> RealFPS_Report.txt
+
+echo GPU: >> RealFPS_Report.txt
+powershell -command "Get-CimInstance Win32_VideoController | Select-Object -ExpandProperty Name" >> RealFPS_Report.txt
 
 
-echo.
-echo RAM:
-powershell -command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,2); Write-Host GB"
+echo. >> RealFPS_Report.txt
 
-
-echo.
-echo ===== OPTIMIZATION =====
-
-
-echo Power:
-powercfg /getactivescheme
-
-
-echo.
-echo Game Mode:
-reg query "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled
-
-
-echo.
-echo Xbox DVR:
-reg query "HKCU\System\GameConfigStore" /v GameDVR_Enabled
-
-
-echo.
-echo HAGS:
-reg query "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode 2^>nul
-
-
-echo.
-echo ===== END =====
-
-
-) > RealFPS_Report.txt
+echo RAM: >> RealFPS_Report.txt
+powershell -command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,2)" >> RealFPS_Report.txt
 
 
 call :LOG "Report Generated"
@@ -789,6 +862,7 @@ echo RealFPS_Report.txt
 pause
 
 goto MENU_INFO
+
 
 
 
@@ -830,6 +904,7 @@ goto MENU_INFO
 
 
 
+
 :ENV_CHECK
 
 cls
@@ -842,56 +917,19 @@ echo.
 
 
 echo Checking Windows...
-
 ver
 
 
 echo.
 echo Checking PowerShell...
 
-
 powershell -command "Write-Host PowerShell OK"
-
-
-if errorlevel 1 (
-    echo PowerShell ERROR
-    pause
-    exit
-)
 
 
 echo.
 echo Checking PowerCFG...
 
-
 powercfg /getactivescheme >nul
-
-
-if errorlevel 1 (
-    echo PowerCFG ERROR
-    pause
-    exit
-)
-
-
-echo PowerCFG OK
-
-
-echo.
-echo Checking Registry...
-
-
-reg query "HKCU\Software" >nul
-
-
-if errorlevel 1 (
-    echo Registry ERROR
-    pause
-    exit
-)
-
-
-echo Registry OK
 
 
 echo.
@@ -902,6 +940,7 @@ timeout /t 2 >nul
 
 
 exit /b
+
 
 
 
@@ -919,7 +958,9 @@ echo =====================================
 
 pause
 
+
 exit /b
+
 
 
 
@@ -937,7 +978,9 @@ echo =====================================
 
 pause
 
+
 exit /b
+
 
 
 
@@ -951,78 +994,76 @@ exit /b
 
 
 
-:CHECK_POWER
 
+:CHECK_POWER
 
 for /f "tokens=4" %%a in ('powercfg /getactivescheme') do set power=%%a
 
 
 if /i "%power%"=="381b4222-f694-41f0-9685-ff5bb260df2e" (
-    echo [BALANCED] Power Plan
+echo [BALANCED] Power Plan
 ) else if /i "%power%"=="8c5e7fda-e8bf-4a96-9a85-a6e23a8c83d5" (
-    echo [HIGH] Power Plan
+echo [HIGH] Power Plan
 ) else if /i "%power%"=="e9a42b02-d5df-448d-aa00-03f14749eb61" (
-    echo [ULTIMATE] Power Plan
+echo [ULTIMATE] Power Plan
 ) else (
-    echo [CUSTOM] Power Plan
+echo [CUSTOM] Power Plan
 )
 
 
 exit /b
+
 
 
 
 
 :CHECK_GAME
 
-
 for /f "tokens=3" %%a in ('reg query "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled 2^>nul') do set gm=%%a
 
 
 if "%gm%"=="0x1" (
-    echo [ON ] Game Mode
+echo [ON] Game Mode
 ) else (
-    echo [OFF] Game Mode
+echo [OFF] Game Mode
 )
 
 
 exit /b
+
 
 
 
 
 :CHECK_DVR
 
-
 for /f "tokens=3" %%a in ('reg query "HKCU\System\GameConfigStore" /v GameDVR_Enabled 2^>nul') do set dvr=%%a
 
 
 if "%dvr%"=="0x1" (
-    echo [ON ] Xbox DVR
+echo [ON] Xbox DVR
 ) else (
-    echo [OFF] Xbox DVR
+echo [OFF] Xbox DVR
 )
 
 
 exit /b
+
 
 
 
 
 :CHECK_HAGS
 
-
 for /f "tokens=3" %%a in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode 2^>nul') do set hags=%%a
 
 
 if "%hags%"=="0x2" (
-    echo [ON ] HAGS
+echo [ON] HAGS
 ) else (
-    echo [OFF] HAGS
+echo [OFF] HAGS
 )
 
 
 exit /b
 
-
-exit
