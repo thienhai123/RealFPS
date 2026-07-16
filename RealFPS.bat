@@ -22,123 +22,71 @@ call :ENV_CHECK
 
 :MENU
 cls
+
 echo.
 echo ==================================================
 echo                    REALFPS
-echo.
 echo            Windows Gaming Optimizer
 echo                 Version %VERSION%
-echo.
-echo      Real Tweaks ^| Real Results ^| No Placebo
 echo ==================================================
 echo.
-
-echo --------------------------------------------------
-echo                    SYSTEM STATUS
-echo --------------------------------------------------
-call :CHECK_POWER
-call :CHECK_GAME
-call :CHECK_DVR
-call :CHECK_HAGS
+echo                 [1] Power
 echo.
-
-echo --------------------------------------------------
-echo                  OPTIMIZATIONS
-echo --------------------------------------------------
-echo [1] Ultimate Performance
-echo [2] High Performance
-echo [3] Balanced
+echo                 [2] Gaming
 echo.
-echo [4] Enable Game Mode
-echo [5] Disable Game Mode
+echo                 [3] GPU
 echo.
-echo [6] Disable Xbox DVR
-echo [7] Enable Xbox DVR
+echo                 [4] Profiles
 echo.
-echo [8] Create Restore Point
+echo                 [5] Tools
 echo.
-echo [9] Enable HAGS
-echo [10] Disable HAGS
+echo                 [6] Information
 echo.
-
-echo --------------------------------------------------
-echo                      TOOLS
-echo --------------------------------------------------
-echo [11] Scan System Information
-echo [12] Backup Settings
-echo [13] Restore Settings
-echo [14] Gaming Diagnostics
+echo                 [0] Exit
 echo.
-
-echo --------------------------------------------------
-echo                     PROFILES
-echo --------------------------------------------------
-echo [15] Competitive Mode
-echo [16] Balanced Mode
-echo [17] Battery Saver
-echo.
-
-echo --------------------------------------------------
-echo                   INFORMATION
-echo --------------------------------------------------
-echo [18] About RealFPS
-echo [19] Hardware Detection
-echo [20] Recommended Settings
-echo [21] Generate Report
-echo [22] Developer Info
-echo.
-
-echo --------------------------------------------------
-echo [0] Exit
-echo --------------------------------------------------
+echo ==================================================
 echo.
 
 set /p choice=Select Option:
 
+if "%choice%"=="1" goto MENU_POWER
+if "%choice%"=="2" goto MENU_GAMING
+if "%choice%"=="3" goto MENU_GPU
+if "%choice%"=="4" goto MENU_PROFILE
+if "%choice%"=="5" goto MENU_TOOLS
+if "%choice%"=="6" goto MENU_INFO
+
+if "%choice%"=="0" exit
+
+goto MENU
+
+:MENU_POWER
+cls
+
+echo.
+echo ==================================================
+echo                     POWER
+echo ==================================================
+echo.
+
+call :CHECK_POWER
+echo.
+
+echo [1] Ultimate Performance
+echo [2] High Performance
+echo [3] Balanced
+echo.
+echo [0] Back
+echo.
+
+set /p choice=Select Option:
 
 if "%choice%"=="1" goto ULTIMATE
 if "%choice%"=="2" goto HIGH
 if "%choice%"=="3" goto BALANCED
+if "%choice%"=="0" goto MENU
 
-if "%choice%"=="4" goto GAMEON
-if "%choice%"=="5" goto GAMEOFF
-
-if "%choice%"=="6" goto DVR_OFF
-if "%choice%"=="7" goto DVR_ON
-
-if "%choice%"=="8" goto RESTORE
-
-if "%choice%"=="11" goto SYSTEM_SCAN
-
-if "%choice%"=="12" goto BACKUP
-if "%choice%"=="13" goto RESTORE_BACKUP
-
-if "%choice%"=="14" goto DIAGNOSTICS
-
-if "%choice%"=="15" goto COMPETITIVE
-if "%choice%"=="16" goto BALANCED_MODE
-if "%choice%"=="17" goto BATTERY_MODE
-
-if "%choice%"=="18" goto ABOUT
-if "%choice%"=="19" goto HARDWARE_SCAN
-if "%choice%"=="20" goto RECOMMEND
-if "%choice%"=="21" goto REPORT
-if "%choice%"=="22" goto DEV_INFO
-
-if "%choice%"=="9" goto HAGS_ON
-if "%choice%"=="10" goto HAGS_OFF
-
-if "%choice%"=="0" exit
-
-
-echo.
-echo Invalid option.
-pause
-exit /b
-
-echo =====================================
-echo POWER MANAGEMENT
-echo =====================================
+goto MENU_POWER
 
 :ULTIMATE
 
@@ -890,11 +838,11 @@ for /f "tokens=4" %%a in ('powercfg /getactivescheme') do set power=%%a
 if /i "%power%"=="381b4222-f694-41f0-9685-ff5bb260df2e" (
     echo [BALANCED] Power Plan
 ) else if /i "%power%"=="8c5e7fda-e8bf-4a96-9a85-a6e23a8c83d5" (
-    echo [HIGH    ] Power Plan
+    echo [HIGH]     Power Plan
 ) else if /i "%power%"=="e9a42b02-d5df-448d-aa00-03f14749eb61" (
     echo [ULTIMATE] Power Plan
 ) else (
-    echo [CUSTOM  ] Power Plan
+    echo [CUSTOM]   Power Plan
 )
 
 exit /b
@@ -902,16 +850,12 @@ exit /b
 
 :CHECK_GAME
 
-set gm=UNKNOWN
-
 for /f "tokens=3" %%a in ('reg query "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled 2^>nul') do set gm=%%a
 
 if "%gm%"=="0x1" (
     echo [ON ] Game Mode
-) else if "%gm%"=="0x0" (
-    echo [OFF] Game Mode
 ) else (
-    echo [?  ] Game Mode
+    echo [OFF] Game Mode
 )
 
 exit /b
@@ -920,16 +864,12 @@ exit /b
 
 :CHECK_DVR
 
-set dvr=UNKNOWN
-
 for /f "tokens=3" %%a in ('reg query "HKCU\System\GameConfigStore" /v GameDVR_Enabled 2^>nul') do set dvr=%%a
 
 if "%dvr%"=="0x1" (
     echo [ON ] Xbox DVR
-) else if "%dvr%"=="0x0" (
-    echo [OFF] Xbox DVR
 ) else (
-    echo [?  ] Xbox DVR
+    echo [OFF] Xbox DVR
 )
 
 exit /b
@@ -938,16 +878,12 @@ exit /b
 
 :CHECK_HAGS
 
-set hags=UNKNOWN
-
 for /f "tokens=3" %%a in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode 2^>nul') do set hags=%%a
 
 if "%hags%"=="0x2" (
     echo [ON ] HAGS
-) else if "%hags%"=="0x1" (
-    echo [OFF] HAGS
 ) else (
-    echo [?  ] HAGS
+    echo [OFF] HAGS
 )
 
 exit /b
