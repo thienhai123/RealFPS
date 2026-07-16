@@ -1,14 +1,20 @@
 # Changelog
 
-## v0.1
+## v0.1-alpha
 
-Initial project setup
+### Added
 
-### Planned Features
+- Ultimate Performance
+- High Performance
+- Balanced
 
-- Power Plans
-- Game Mode
-- Xbox DVR
-- Clean Temp
-- System Status
-- Gaming Pack
+---
+
+## v0.1-pre
+
+### Project Setup
+
+- Repository created
+- README created
+- Roadmap created
+- Tweaks database created
