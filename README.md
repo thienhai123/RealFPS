@@ -1,3 +1,47 @@
+# RealFPS
+
+Windows Gaming Optimizer
+
+Real Tweaks • Real Results • No Placebo
+
+---
+
+## Why RealFPS?
+
+Most Windows optimization tools are full of random tweaks,
+registry hacks and placebo settings.
+
+RealFPS was built with a different philosophy:
+
+- Only measurable optimizations
+- Transparent changes
+- Easy to restore
+- No fake FPS boosts
+
+---
+
+## Features
+
+- Power Plans
+- Game Mode
+- Xbox DVR Management
+- Network Optimization
+- Temp Cleaner
+- Gaming Pack
+- System Status
+
+---
+
+## About The Project
+
+RealFPS started as a personal project by a graphic design student
+who wanted to learn software development using AI.
+
+The goal was simple:
+
+Build a Windows optimization tool based on research,
+testing and measurable results.
+
 <p align="center">
   <img src="assets/logo.png" width="180">
 </p>
