@@ -76,16 +76,23 @@ Just measurable improvements.
 
 ---
 
-## 👨‍💻 Developer
+# Hi, I'm Hải 👋
 
-Hi, I'm **Hải**.
+🎨 Graphic Design Student
 
-A Graphic Design student who enjoys exploring technology,
-Windows optimization and software development with AI.
+💻 Building software with AI
 
-RealFPS is my attempt to prove that curiosity,
-research and persistence can be just as important
-as a computer science degree.
+⚡ Creator of RealFPS
+
+I enjoy exploring Windows optimization,
+software development, and the intersection
+between design and technology.
+
+Currently building RealFPS:
+a Windows optimization tool focused on
+measurable performance and zero placebo tweaks.
+
+"Curiosity is more important than credentials."
 
 ---
 
