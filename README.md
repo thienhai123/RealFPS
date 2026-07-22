@@ -18,93 +18,78 @@ Windows Gaming Optimizer
 
 # 👋 About Me
 
-Hi, I'm Hải — a Graphic Design student who is passionate about technology, software development, and system optimization.
+Hi, I'm Hải — a Graphic Design student passionate about technology, software development, and system optimization.
 
-RealFPS started from my curiosity about how Windows works and my desire to create my own tools instead of only using existing software.
+RealFPS started from my curiosity about how Windows works and my goal to create a transparent optimization tool instead of relying on unknown "FPS booster" software.
 
-Although my background is design, I learned programming and built RealFPS with the support of AI as a development assistant.
+Although my background is design, I learned programming and developed RealFPS with AI as a development assistant.
 
-The goal is not to create another "FPS booster", but to build a transparent optimization tool where every change can be understood, tested, and restored.
+The goal is simple:
 
-> Design thinking + AI + Programming = RealFPS
+> Build an optimization tool where every change can be understood, tested, and restored.
 
+**Design thinking + AI + Programming = RealFPS**
 
 ---
 
 # 🎮 RealFPS
 
-RealFPS is a Windows optimization tool designed to improve gaming performance through measurable system adjustments.
+RealFPS is a Windows gaming optimization tool focused on measurable system improvements.
 
-Unlike many optimization tools that rely on random tweaks, RealFPS focuses on:
+Instead of applying random tweaks, RealFPS focuses on:
 
 | Feature | Description |
 |---|---|
-| ⚡ Performance | Power plan and system performance tuning |
-| 🎮 Gaming | Game Mode and Xbox DVR management |
-| 🌐 Network | Network optimization settings |
-| 🧹 Cleanup | Temporary file cleanup |
-| 📊 Monitoring | System information and status checking |
-
+| ⚡ Performance | Power plans and system tuning |
+| 🎮 Gaming | Game Mode, Xbox DVR and gaming settings |
+| 🌐 Network | Network optimization |
+| 🧹 Cleanup | Temporary file management |
+| 📊 Analysis | Hardware and Windows status checking |
 
 ---
 
 # 📸 Preview
 
-## 🖥️ Main Dashboard
-
 <p align="center">
-  <img src="./assets/preview-dashboard.png" width="850">
+  <img src="./assets/preview-dashboard.png" width="650">
 </p>
 
-RealFPS provides a clean terminal interface with system information, recommended profiles, and optimization options.
-
-
-<br>
-
-
-## 📊 System Analysis
-
 <p align="center">
-  <img src="./assets/preview-analysis.png" width="850">
+  Main Dashboard
 </p>
 
-Automatically analyzes your hardware and Windows configuration to recommend suitable optimization profiles.
-
-
-<br>
-
-
-## ⚡ Optimization Center
 
 <p align="center">
-  <img src="./assets/preview-optimization.png" width="850">
+  <img src="./assets/preview-analysis.png" width="380">
+  <img src="./assets/preview-optimization.png" width="380">
 </p>
 
-Apply transparent system tweaks with clear logs and restore-friendly changes.
+<p align="center">
+  System Analysis & Optimization Center
+</p>
 
 
 ---
 
 # 🚀 Philosophy
 
-Many Windows optimization tools use:
+Many optimization tools focus on:
 
-❌ Fake FPS claims  
-❌ Random registry changes  
-❌ Unsafe modifications  
-❌ No restore options  
+❌ Fake FPS promises  
+❌ Random registry modifications  
+❌ Unsafe system changes  
+❌ No recovery options  
 
 
 RealFPS follows:
 
 ✅ Research-based tweaks  
-✅ Transparent changes  
-✅ Restore-friendly system  
-✅ No placebo optimization  
+✅ Transparent modifications  
+✅ Restore-friendly changes  
+✅ Measurable optimization  
 
 
 > Only measurable optimizations.
-
 
 ---
 
@@ -116,8 +101,26 @@ RealFPS follows:
 | ⚡ Power | Ultimate Performance, High Performance, Balanced |
 | 🌐 Network | Network optimization and restore |
 | 🛠 System | System analysis, cleanup, restore point |
-| 📦 Profiles | Competitive, Balanced, Battery modes |
+| 📦 Profiles | Competitive, Balanced, Battery |
 
+---
+
+# 🧠 Inspiration & References
+
+RealFPS is an independent project built from scratch.
+
+The project was inspired by the ideas and concepts behind:
+
+- **Chris Titus Tech Windows Utility**  
+  → Windows management, debloat concepts, system control approach
+
+- **HoneCtrl / Gaming optimization tools**  
+  → Gaming-focused optimization ideas and user-friendly tweaking experience
+
+
+RealFPS does **not** copy source code, interface, or proprietary components.
+
+Every optimization script inside RealFPS is independently developed and tested.
 
 ---
 
@@ -128,10 +131,9 @@ RealFPS is developed with:
 | Tool | Purpose |
 |---|---|
 | Batch Script | Windows automation |
-| AI Assistant | Programming support & development |
+| AI Assistant | Development support |
 | GitHub | Version control |
 | Windows Testing | Performance validation |
-
 
 ---
 
@@ -148,7 +150,6 @@ RealFPS is developed with:
 | 🔄 | Complete UI Redesign |
 | 🔄 | More measurable tweaks |
 
-
 ---
 
 # 📦 Version
@@ -157,7 +158,6 @@ RealFPS is developed with:
 ![Version](https://img.shields.io/badge/Version-v2.0.0-green)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
-
 
 ---
 
