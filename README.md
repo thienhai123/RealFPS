@@ -22,10 +22,12 @@ Hi, I'm Hải — a Graphic Design student who is passionate about technology, s
 
 RealFPS started from my curiosity about how Windows works and my desire to create my own tools instead of only using existing software.
 
-Although my background is design, I learned programming and built RealFPS with the support of AI as a development assistant.  
+Although my background is design, I learned programming and built RealFPS with the support of AI as a development assistant.
+
 The goal is not to create another "FPS booster", but to build a transparent optimization tool where every change can be understood, tested, and restored.
 
 > Design thinking + AI + Programming = RealFPS
+
 
 ---
 
@@ -43,6 +45,44 @@ Unlike many optimization tools that rely on random tweaks, RealFPS focuses on:
 | 🧹 Cleanup | Temporary file cleanup |
 | 📊 Monitoring | System information and status checking |
 
+
+---
+
+# 📸 Preview
+
+## 🖥️ Main Dashboard
+
+<p align="center">
+  <img src="./assets/preview-dashboard.png" width="850">
+</p>
+
+RealFPS provides a clean terminal interface with system information, recommended profiles, and optimization options.
+
+
+<br>
+
+
+## 📊 System Analysis
+
+<p align="center">
+  <img src="./assets/preview-analysis.png" width="850">
+</p>
+
+Automatically analyzes your hardware and Windows configuration to recommend suitable optimization profiles.
+
+
+<br>
+
+
+## ⚡ Optimization Center
+
+<p align="center">
+  <img src="./assets/preview-optimization.png" width="850">
+</p>
+
+Apply transparent system tweaks with clear logs and restore-friendly changes.
+
+
 ---
 
 # 🚀 Philosophy
@@ -54,6 +94,7 @@ Many Windows optimization tools use:
 ❌ Unsafe modifications  
 ❌ No restore options  
 
+
 RealFPS follows:
 
 ✅ Research-based tweaks  
@@ -61,7 +102,9 @@ RealFPS follows:
 ✅ Restore-friendly system  
 ✅ No placebo optimization  
 
+
 > Only measurable optimizations.
+
 
 ---
 
@@ -75,11 +118,6 @@ RealFPS follows:
 | 🛠 System | System analysis, cleanup, restore point |
 | 📦 Profiles | Competitive, Balanced, Battery modes |
 
----
-
-# 📸 Preview
-
-Coming soon...
 
 ---
 
@@ -93,6 +131,7 @@ RealFPS is developed with:
 | AI Assistant | Programming support & development |
 | GitHub | Version control |
 | Windows Testing | Performance validation |
+
 
 ---
 
@@ -109,6 +148,7 @@ RealFPS is developed with:
 | 🔄 | Complete UI Redesign |
 | 🔄 | More measurable tweaks |
 
+
 ---
 
 # 📦 Version
@@ -117,6 +157,7 @@ RealFPS is developed with:
 ![Version](https://img.shields.io/badge/Version-v2.0.0-green)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
+
 
 ---
 
@@ -128,6 +169,7 @@ If you find RealFPS useful:
 🐛 Report bugs  
 💡 Suggest improvements  
 🤝 Share feedback  
+
 
 ---
 
