@@ -6,118 +6,131 @@ RealFPS
   <img src="https://raw.githubusercontent.com/HaiCreates/RealFPS/main/assets/Banner.png" width="100%">
 </p>
 
-# RealFPS
-
+<h2 align="center">
 Windows Gaming Optimizer
+</h2>
 
-> Real Tweaks • Real Results • No Placebo
+<p align="center">
+⚡ Real Tweaks • 📊 Real Results • 🚫 No Placebo
+</p>
+
+---
+
+# 👋 About Me
+
+Hi, I'm Hải — a Graphic Design student who is passionate about technology, software development, and system optimization.
+
+RealFPS started from my curiosity about how Windows works and my desire to create my own tools instead of only using existing software.
+
+Although my background is design, I learned programming and built RealFPS with the support of AI as a development assistant.  
+The goal is not to create another "FPS booster", but to build a transparent optimization tool where every change can be understood, tested, and restored.
+
+> Design thinking + AI + Programming = RealFPS
+
+---
 
 # 🎮 RealFPS
 
-> **Windows Gaming Optimizer**
->
-> ⚡ Real Tweaks • 📊 Real Results • 🚫 No Placebo
+RealFPS is a Windows optimization tool designed to improve gaming performance through measurable system adjustments.
 
-![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-blue)
-![Version](https://img.shields.io/badge/Version-v0.1--alpha-green)
-![Status](https://img.shields.io/badge/Status-Active-success)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+Unlike many optimization tools that rely on random tweaks, RealFPS focuses on:
 
----
-
-## 🚀 Why RealFPS?
-
-Most Windows optimization tools are filled with:
-
-❌ Random registry tweaks
-
-❌ Unverified "FPS boosts"
-
-❌ Changes that cannot be restored
-
-❌ Placebo optimizations
-
-RealFPS follows a different philosophy:
-
-✅ Only measurable optimizations
-
-✅ Transparent changes
-
-✅ Easy to restore
-
-✅ No fake FPS boosts
+| Feature | Description |
+|---|---|
+| ⚡ Performance | Power plan and system performance tuning |
+| 🎮 Gaming | Game Mode and Xbox DVR management |
+| 🌐 Network | Network optimization settings |
+| 🧹 Cleanup | Temporary file cleanup |
+| 📊 Monitoring | System information and status checking |
 
 ---
 
-## ✨ Features
+# 🚀 Philosophy
 
-### 🎯 Gaming
+Many Windows optimization tools use:
 
-- ⚡ Power Plans
-- 🎮 Game Mode Management
-- 📹 Xbox DVR Management
-- 📦 Gaming Pack
+❌ Fake FPS claims  
+❌ Random registry changes  
+❌ Unsafe modifications  
+❌ No restore options  
 
-### 🛠 Optimization
+RealFPS follows:
 
-- 🌐 Network Optimization
-- 🧹 Temp Cleaner
-- 📊 System Status
+✅ Research-based tweaks  
+✅ Transparent changes  
+✅ Restore-friendly system  
+✅ No placebo optimization  
+
+> Only measurable optimizations.
 
 ---
 
-## 📸 Screenshots
+# ✨ Features
+
+| Category | Available Features |
+|---|---|
+| 🎯 Gaming | Game Mode, Xbox DVR, Gaming Pack |
+| ⚡ Power | Ultimate Performance, High Performance, Balanced |
+| 🌐 Network | Network optimization and restore |
+| 🛠 System | System analysis, cleanup, restore point |
+| 📦 Profiles | Competitive, Balanced, Battery modes |
+
+---
+
+# 📸 Preview
 
 Coming soon...
 
 ---
 
-## 🧠 About The Project
+# 🛠 Development
 
-RealFPS started as a personal project by a graphic design student
-who wanted to learn software development using AI.
+RealFPS is developed with:
 
-The goal was simple:
-
-> Build a Windows optimization tool based on research,
-> testing and measurable results.
-
-No magic tweaks.
-
-No clickbait.
-
-Just measurable improvements.
+| Tool | Purpose |
+|---|---|
+| Batch Script | Windows automation |
+| AI Assistant | Programming support & development |
+| GitHub | Version control |
+| Windows Testing | Performance validation |
 
 ---
 
-# Hi, I'm Hải 👋
+# 📌 Roadmap
 
-🎨 Graphic Design Student
-
-💻 Building software with AI
-
-⚡ Creator of RealFPS
-
-I enjoy exploring Windows optimization,
-software development, and the intersection
-between design and technology.
-
-Currently building RealFPS:
-a Windows optimization tool focused on
-measurable performance and zero placebo tweaks.
-
-"Curiosity is more important than credentials."
+| Status | Feature |
+|---|---|
+| ✅ | Environment Check |
+| ✅ | Welcome System |
+| ✅ | Agreement System |
+| ✅ | System Analysis |
+| ✅ | Restore Point |
+| 🔄 | Optimization Center V2 |
+| 🔄 | Complete UI Redesign |
+| 🔄 | More measurable tweaks |
 
 ---
 
-## ⭐ Support The Project
+# 📦 Version
+
+![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-blue)
+![Version](https://img.shields.io/badge/Version-v2.0.0-green)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+---
+
+# ⭐ Support RealFPS
 
 If you find RealFPS useful:
 
-⭐ Star this repository
+⭐ Star this repository  
+🐛 Report bugs  
+💡 Suggest improvements  
+🤝 Share feedback  
 
-🐛 Report bugs
+---
 
-💡 Suggest new features
-
-🤝 Share feedback
+<p align="center">
+Built with curiosity, AI, and passion.
+</p>
