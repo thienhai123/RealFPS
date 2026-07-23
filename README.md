@@ -64,16 +64,6 @@ RealFPS focuses on:
 
 <p align="center">
   <img src="./assets/preview-dashboard.png" width="650">
-</p>
-
-<p align="center">
-Main Dashboard
-</p>
-
-<p align="center">
-  <img src="./assets/preview-analysis.png" width="380">
-  <img src="./assets/preview-optimization.png" width="380">
-</p>
 
 <p align="center">
 System Analysis & Optimization Center
